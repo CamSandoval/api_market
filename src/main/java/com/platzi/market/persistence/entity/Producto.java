@@ -1,7 +1,6 @@
 package com.platzi.market.persistence.entity;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.ManyToAny;
 
 //La notación @Entity es la encargada de decirle a java que esta es una de las tablas de nuestra base de datos
 @Entity
@@ -29,7 +28,7 @@ public class Producto {
 
     //Esta es la forma de poder adicionar relaciones dentro de la base de datos
     //@ManyToOne es la notacion que define que tipo de relacion existe, en este caso es de muchos a uno
-    @ManyToAny
+    @ManyToOne
     //@JoinColumn es el referenciar que campos som los que representan la relación de las tablas
     @JoinColumn(name = "id_categoria", insertable = false,updatable = false)
     private Categoria categoria;
@@ -88,5 +87,12 @@ public class Producto {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }

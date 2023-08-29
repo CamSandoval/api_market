@@ -1,6 +1,5 @@
 package com.platzi.market.persistence.crud;
 
-import com.platzi.market.persistence.entity.Cliente;
 import com.platzi.market.persistence.entity.Producto;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -25,5 +24,5 @@ public interface ProductoCrudRepository extends CrudRepository<Producto,Integer>
 
 
     Optional<List<Producto>> findByCantidadStockLessThanAndEstado(int cantidadStock,boolean estado);
-    
+
 }
