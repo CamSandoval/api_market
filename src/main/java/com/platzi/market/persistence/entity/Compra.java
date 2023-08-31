@@ -12,7 +12,7 @@ public class Compra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_compra")
-    private Integer idColumn;
+    private Integer idCompra;
 
     @Column(name = "id_cliente")
     private String idCliente;
@@ -28,10 +28,10 @@ public class Compra {
     private List<ComprasProducto> productos;
 
     public Integer getIdColumn() {
-        return idColumn;
+        return idCompra;
     }
 
     public void setIdColumn(Integer idColumn) {
-        this.idColumn = idColumn;
+        this.idCompra = idColumn;
     }
 }
