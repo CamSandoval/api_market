@@ -2,6 +2,9 @@ package com.platzi.market.web.controller;
 
 import com.platzi.market.domain.Product;
 import com.platzi.market.domain.service.ProductService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +19,11 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/all")
+    @Operation(summary = "Get all supermarket products")
+    @ApiResponses(value={
+            @ApiResponse(responseCode = "200", description = "All products has been found"),
+            @ApiResponse(responseCode = "400",description = "There is a problem with the products")
+    })
     public ResponseEntity<List<Product>> getAll(){
         return new ResponseEntity<>(productService.getAll(),HttpStatus.OK);
     }
