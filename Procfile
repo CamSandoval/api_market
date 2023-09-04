@@ -1,1 +1,1 @@
-web: java -jar -Dspring.profiles.active=pdn /home/juank/spring_workspace/platzi-market/build/libs/platzi-market-1.0.0.jar
+web: java -jar -Dspring.profiles.active=pdn build/libs/platzi-market-1.0.0.jar
